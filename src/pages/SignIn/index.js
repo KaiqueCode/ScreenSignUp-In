@@ -1,10 +1,20 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import React from "react";
+import { View, Text, Button } from "react-native";
 
-export default function SignIn() {
-    return (
-        <View>
-            <Text>Tela Login</Text>
-        </View>
-    );
+import { useNavigation } from "@react-navigation/native";
+
+function SignIn() {
+  const navigation = useNavigation();
+
+  return (
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+      <Text>Tela Sign In</Text>
+      <Button
+        title="Welcome"
+        onPress={() => navigation.navigate("Welcome")}
+      ></Button>
+    </View>
+  );
 }
+
+export { SignIn };
